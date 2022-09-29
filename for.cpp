@@ -230,9 +230,9 @@ exam500(){
 		cnt++;
 		
 		if(guess>answer)
-			printf("제시한 숫자가 높습니다.\n");
+			printf("제시한 숫자가 높습니다.(%d보다 낮은 수)\n",guess);
 		if(guess<answer)
-			printf("제시한 숫자가 낮습니다.\n");
+			printf("제시한 숫자가 낮습니다.(%d보다 높은 수)\n",guess);
 	}while(answer!=guess);
 	
 	printf("축하합니다! 정답은 %d이고, 시도횟수 = %d\n",answer,cnt);
@@ -265,6 +265,102 @@ exam700(){
 	}
 }
 
+exam800(){
+	int num;
+	while(1)
+	{
+		printf("숫자입력 : ");
+		scanf("%d",&num);
+		if(num<0)	break;
+		if(num==0)	continue;
+		if(num%2==0)
+			printf("짝수\n");
+		else
+			printf("홀수\n");
+	}
+}
+
+exam900_1(){
+	int i,j;
+	for(i=0;i<=4;i++)
+	{
+		for(j=0;j<i;j++)
+		{
+			printf("O");
+		}
+		printf("*\n");
+	}
+}
+
+exam900_2(){
+	int i=1,j;
+	
+	while(i<=5)
+	{
+		j=1;
+		while(j<i)
+		{
+			printf("O");
+			j++;
+		}
+		printf("*\n");
+		i++;
+	}
+}
+
+exam1000(){
+	int n,i,jumsu;
+	int max=0,min=100;
+	printf("학생수를 입력하세요 : ");
+	scanf("%d",&n);
+	printf("점수를 입력하세요(0~100) : ");
+	
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&jumsu);
+		if(max<jumsu)	max=jumsu;
+		if(min>jumsu)	min=jumsu;
+	}
+	printf("1등은 %d점, 꼴찌는 %d점\n",max,min);
+}
+
+exam1100(){
+	int i,j;
+	for(i=1;i<=9;i++)
+	{
+		for(j=2;j<=5;j++)
+			printf("%2d *%2d = %2d\t",j,i,j*i);
+		printf("\n");
+	}
+	printf("\n");
+	for(i=1;i<=9;i++)
+	{
+		for(j=6;j<=9;j++)
+			printf("%2d * %2d = %2d\t",j,i,j*i);
+		printf("\n");
+	}
+}
+
+exam1200(){
+	
+}
+
+exam1300(){
+	
+}
+
+exam1400(){
+	
+}
+
+exam1500(){
+	
+}
+
+exam1600(){
+	
+}
+
 
 main(){
 	int no;
@@ -293,6 +389,16 @@ main(){
 			case 500: exam500(); break;
 			case 600: exam600(); break;
 			case 700: exam700(); break;
+			case 800: exam800(); break;
+			case 901: exam900_1(); break;
+			case 902: exam900_2(); break;
+			case 1000: exam1000(); break;
+			case 1100: exam1100(); break;
+			case 1200: exam1200(); break;
+			case 1300: exam1300(); break;
+			case 1400: exam1400(); break;
+			case 1500: exam1500(); break;
+			case 1600: exam1600(); break;
 		}
 	}
 }
